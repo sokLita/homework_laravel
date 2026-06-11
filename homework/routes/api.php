@@ -1,7 +1,6 @@
-use App/Http/Controllers/Api/StudentController;
-use Illuminate\Http\Request;
+<?php
 
-Route::get('/category', [CategoryController::class, 'index']);
-Route::post('/category', [CategoryController::class, 'store']);
-Route::put('/category/{id}', [CategoryController::class, 'update']);
-Route::delete('/category/{id}', [CategoryController::class, 'destroy']);
+use App\Http\Controllers\Api\CategoryController;
+use Illuminate\Support\Facades\Route;
+// This macro line registers all 5 required API CRUD endpoints safely:
+Route::apiResource('categories', CategoryController::class);
